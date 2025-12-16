@@ -388,11 +388,11 @@ public class Main {
             try {
                 // 读取文件
                 String text = ReadFileToString(readPath);
-                System.out.println("原始文本: " + text.substring(0, Math.min(text.length(), 50)) + "...");
+                System.out.println("原始文本: " + text.substring(0, Math.min(text.length(), 50)));
 
                 // 编码处理文本
                 initText = ConvertTextToCode(text);
-                System.out.println("编码后文本: " + initText.substring(0, Math.min(initText.length(), 50)) + "...");
+                System.out.println("编码后文本: " + initText.substring(0, Math.min(initText.length(), 50)));
 
                 // 加密
                 RSAENText = RSAEN(initText, keyPair.e, keyPair.n, applyNumber, cipherLength, group);
@@ -426,7 +426,7 @@ public class Main {
                 // 写入解密文件
                 WriteStringToFile(RSADEText, RSADEPath);
                 System.out.println("解密完成！明文已保存到: " + RSADEPath);
-                System.out.println("解密后文本: " + RSADEText.substring(0, Math.min(RSADEText.length(), 50)) + "...");
+                System.out.println("解密后文本: " + RSADEText.substring(0, Math.min(RSADEText.length(), 50)));
 
             } catch (IOException e) {
                 System.err.println("读取文件错误: " + e.getMessage());
